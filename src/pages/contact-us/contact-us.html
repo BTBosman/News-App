@@ -1,0 +1,57 @@
+<!--
+  Generated template for the ContactUsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="nav" color="custom4">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>contact Us</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list no lines>
+        <ion-item no lines>
+          <ion-label color="primary">Firstname</ion-label>
+          <ion-input #firstName placeholder="First Name"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label color="primary" fixed>Lastname</ion-label>
+          <ion-input #lastName type="text" placeholder="Last Name"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label color="primary" stacked>Email </ion-label>
+          <ion-input #email type="email" placeholder="Email Input"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label  color="primary" floating>Leave Comments</ion-label>
+          <br>
+          <ion-input #comment ></ion-input>
+        </ion-item>
+      
+      </ion-list>
+
+      <button ion-button block round clear (click)="saveComment(firstName.value,lastName.value,email.value,comment.value)">Submit</button>
+      <ion-list *ngFor="let emp of contactArray,let i = index">
+        
+       <ion-item><b>Name</b> {{emp.firstName}}</ion-item> 
+        <ion-item><b>Lastname</b> {{emp.lastName}}</ion-item>
+        <ion-item><b>Email:</b> {{emp.email}}</ion-item>
+        <b>Comments</b>
+        <br>
+        {{emp.comment}}
+        <br>
+        <button ion-button color="danger" clear round (click)="remove(a)">Delete Comment</button>
+        <button ion-button color="primary" clear round (click)="update(i,firstName.value,lastName.value,email.value,comment.value)">Update</button>
+     </ion-list>
+</ion-content>

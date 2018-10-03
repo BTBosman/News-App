@@ -1,18 +1,21 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+<ion-header color="danger">
+  <button block clear class="menu" ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
+      <ion-title class="title">Latest News</ion-title>
     </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  
+  <ion-card class="cards" *ngFor="let i of arr; let a = index">
+  
+        <ion-thumbnail item-start>
+          <img class="image" src="{{i.urlToImage}}" alt="image not available">
+        </ion-thumbnail>
+        <br>
+        <h2>{{i.title}}</h2>
+        <button ion-button color="custom" clear item-end (click)="presentModal(a)">View</button>
+    </ion-card>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
+

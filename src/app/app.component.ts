@@ -4,7 +4,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { TopStoriesPage } from '../pages/top-stories/top-stories';
+import { WorldNewsPage } from '../pages/world-news/world-news';
+import { SportsNewsPage } from '../pages/sports-news/sports-news';
+import { ContactUsPage } from '../pages/contact-us/contact-us';
+import {StartPage} from '../pages/start/start';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +16,22 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = StartPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any,icon?:string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Latest News', component: HomePage, icon:"md-home" },
+      // { title: 'List', component: ListPage },
+      { title: 'Top Stories', component: TopStoriesPage,icon:"md-paper"},
+      { title: 'Entertainment', component: WorldNewsPage,icon:"md-tv" },
+      { title:'Sports News', component: SportsNewsPage,icon:"md-ball" },
+      { title:'Contact Us', component: ContactUsPage, icon:"md-mail"}
+      
     ];
 
   }

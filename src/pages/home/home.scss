@@ -1,3 +1,28 @@
 page-home {
 
+    ion-content{
+        text-align: center;
+    }
+    .cards{
+        width:auto;
+        border-radius: 3px;
+        box-shadow: 2px 2px rgb(255, 20, 20);
+        // background: url(../../assets/imgs/latestback2.jpg);
+        // background-size: contain;
+        // background-position: left;
+        // background-repeat: no-repeat;
+
+    }
+    .nav{
+        opacity: 0.7;
+    }
+
+    .image{
+        max-height: 175px;
+    }
+    
+    .title{
+        margin-left: -5px;
+    }
+
 }
